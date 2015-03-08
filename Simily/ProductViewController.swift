@@ -16,4 +16,8 @@ class ProductViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
 //        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+
+    @IBAction func goBack(sender: AnyObject) {
+        
+    }
 }
