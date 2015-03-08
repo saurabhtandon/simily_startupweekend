@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83072DEE1AAC28A70025111F /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 83072DED1AAC28A70025111F /* Node.m */; };
 		8370D96B1AABD331005455D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8370D96A1AABD331005455D0 /* AppDelegate.swift */; };
 		8370D96E1AABD331005455D0 /* Simily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8370D96C1AABD331005455D0 /* Simily.xcdatamodeld */; };
 		8370D9701AABD331005455D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8370D96F1AABD331005455D0 /* ViewController.swift */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83072DEC1AAC28A70025111F /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		83072DED1AAC28A70025111F /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
 		8370D9651AABD331005455D0 /* Simily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8370D9691AABD331005455D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8370D96A1AABD331005455D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 				8370D96A1AABD331005455D0 /* AppDelegate.swift */,
 				8370D96F1AABD331005455D0 /* ViewController.swift */,
 				8370D98D1AABE853005455D0 /* SearchResultsViewController.swift */,
+				83072DEC1AAC28A70025111F /* Node.h */,
+				83072DED1AAC28A70025111F /* Node.m */,
 				8370D9711AABD331005455D0 /* Main.storyboard */,
 				8370D9741AABD331005455D0 /* Images.xcassets */,
 				8370D9761AABD331005455D0 /* LaunchScreen.xib */,
@@ -230,6 +235,7 @@
 				8370D98E1AABE853005455D0 /* SearchResultsViewController.swift in Sources */,
 				8370D96E1AABD331005455D0 /* Simily.xcdatamodeld in Sources */,
 				8370D96B1AABD331005455D0 /* AppDelegate.swift in Sources */,
+				83072DEE1AAC28A70025111F /* Node.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
