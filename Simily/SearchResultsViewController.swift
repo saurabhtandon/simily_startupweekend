@@ -47,7 +47,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         let cell:AnyObject = collectionView.dequeueReusableCellWithReuseIdentifier("QuestionCell", forIndexPath: indexPath)
         let question = questionStack[indexPath.row]
 
-        let questionLabel = cell.viewWithTag(100) as UITextView
+        let questionLabel = cell.viewWithTag(100) as UILabel
         questionLabel.text = question as String
 
         return cell as UICollectionViewCell
