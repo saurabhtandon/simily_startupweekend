@@ -9,13 +9,25 @@
 import UIKit
 
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet var tableView: UITableView?
+    @IBOutlet var collectionView: UICollectionView?
 
     let productDisplay = ["Product1", "Product2"]
-    let questionStack = ["Q1", "Q2"]
+    var questionStack = ["Q1"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+    }
+
+    @IBAction func pickOption(sender: UIButton) {
+        let choice = sender.tag
+
+        questionStack.append("Append \(choice)")
+
+        let ip = NSIndexPath(forRow: questionStack.count - 1, inSection: 0)
+        collectionView?.insertItemsAtIndexPaths([ip])
+        collectionView?.scrollToItemAtIndexPath(ip, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
     }
 
     // MARK: tableView
