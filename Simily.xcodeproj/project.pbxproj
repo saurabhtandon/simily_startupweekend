@@ -14,6 +14,7 @@
 		8370D9751AABD331005455D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8370D9741AABD331005455D0 /* Images.xcassets */; };
 		8370D9781AABD331005455D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8370D9761AABD331005455D0 /* LaunchScreen.xib */; };
 		8370D9841AABD331005455D0 /* SimilyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8370D9831AABD331005455D0 /* SimilyTests.swift */; };
+		8370D98E1AABE853005455D0 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8370D98D1AABE853005455D0 /* SearchResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		8370D97D1AABD331005455D0 /* SimilyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimilyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8370D9821AABD331005455D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8370D9831AABD331005455D0 /* SimilyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilyTests.swift; sourceTree = "<group>"; };
+		8370D98D1AABE853005455D0 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				8370D96A1AABD331005455D0 /* AppDelegate.swift */,
 				8370D96F1AABD331005455D0 /* ViewController.swift */,
+				8370D98D1AABE853005455D0 /* SearchResultsViewController.swift */,
 				8370D9711AABD331005455D0 /* Main.storyboard */,
 				8370D9741AABD331005455D0 /* Images.xcassets */,
 				8370D9761AABD331005455D0 /* LaunchScreen.xib */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8370D9701AABD331005455D0 /* ViewController.swift in Sources */,
+				8370D98E1AABE853005455D0 /* SearchResultsViewController.swift in Sources */,
 				8370D96E1AABD331005455D0 /* Simily.xcdatamodeld in Sources */,
 				8370D96B1AABD331005455D0 /* AppDelegate.swift in Sources */,
 			);
