@@ -17,7 +17,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
     let nodeTemplate = Node.createDefaultNodes()
 
-    var productDisplay = []
+    var productDisplay: Array<Product> = []
     var questionStack: Array<Node> = []
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -31,6 +31,10 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
         questionStack.append(nodeTemplate)
         collectionView?.reloadData()
+
+        productDisplay = nodeTemplate.products.copy() as [Product]
+        productDisplay.sort({$0.endorsements > $1.endorsements})
+        tableView?.reloadData()
 
         searchField?.addBottomBorderWithColor(UIColor.blackColor(), andWidth: 2.0)
         searchField?.text = "Laptops"
@@ -57,7 +61,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         let childNode = questionStack.last?.childNodes[choice] as Node
 
         questionStack.append(childNode)
-        productDisplay = childNode.products
+        productDisplay = childNode.products.copy() as [Product]
+        productDisplay.sort({$0.endorsements > $1.endorsements})
         tableView?.reloadData()
 
         // Animate inserted element
@@ -93,11 +98,15 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
         titleLabel.text = product.title
         brandLabel.text = product.brand
-        likesLabel.text = "\(product.endorsements.value)"
+        likesLabel.text = "\(product.endorsements)"
         let price = product.price.integerValue
         let dollars = price / 100
         let cents = price % 100
-        priceLabel.text = "$\(dollars).\(cents))"
+        var centString = "\(cents)"
+        if (cents < 10) {
+            centString = "0\(centString)"
+        }
+        priceLabel.text = "$\(dollars).\(centString)"
 
         return cell as UITableViewCell
     }

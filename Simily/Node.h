@@ -17,6 +17,8 @@
 @property (nonatomic, assign) int endorsements;
 @property (nonatomic) NSString *image;
 
+@property (readonly) NSString *displayPrice;
+
 @end
 
 

@@ -9,7 +9,13 @@
 #import "Node.h"
 
 @implementation Product
+-(NSString *)displayPrice {
+    NSInteger price = self.price.integerValue;
+    int dollars = price / 100;
+    int cents = price % 100;
 
+    return [NSString stringWithFormat:@"$%d.%d", dollars, cents];
+}
 @end
 
 @implementation Node
