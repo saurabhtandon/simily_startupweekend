@@ -11,10 +11,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchImg" translatesAutoresizingMaskIntoConstraints="NO" id="fzJ-Tm-ssh">
-                    <rect key="frame" x="0.0" y="43" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.19215686274509805" green="0.73333333333333328" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.015155766989135597" green="0.78179578367420233" blue="0.60227139034700994" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <point key="canvasLocation" x="585" y="378"/>

@@ -12,5 +12,6 @@
 @interface Lol : NSObject
 
 + (void)refreshCollectionView:(UICollectionView *)cv source:(NSArray*)datasource;
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 @end

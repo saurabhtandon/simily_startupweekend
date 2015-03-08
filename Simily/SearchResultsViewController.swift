@@ -11,6 +11,7 @@ import UIKit
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet var tableView: UITableView?
     @IBOutlet var collectionView: UICollectionView?
+    @IBOutlet var searchField: UITextField?
 
     let nodeTemplate = Node.createDefaultNodes()
 
@@ -23,6 +24,9 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
         questionStack.append(nodeTemplate)
         collectionView?.reloadData()
+
+        searchField?.addBottomBorderWithColor(UIColor.blackColor(), andWidth: 2.0)
+        searchField?.text = "Laptops"
     }
 
     @IBAction func pickOption(sender: UIButton) {
@@ -83,9 +87,27 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         let leftBtn = cell.viewWithTag(1) as UIButton
         let rightBtn = cell.viewWithTag(2) as UIButton
 
+        leftBtn.addBottomBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
+        leftBtn.addTopBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
+        leftBtn.addLeftBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
+        leftBtn.addRightBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
+
+        rightBtn.addBottomBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
+        rightBtn.addTopBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
+        rightBtn.addLeftBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
+        rightBtn.addRightBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
+
+        let color = UIColor(red: 4/255.0, green: 199/255.0, blue: 154/255.0, alpha: 1.0)
+        leftBtn.setBackgroundImage(Lol.imageWithColor(color), forState: UIControlState.Highlighted)
+        rightBtn.setBackgroundImage(Lol.imageWithColor(color), forState: UIControlState.Highlighted)
+
         if (question.question == nil) {
             // End
+            let view = cell as UIView
+            view.backgroundColor = color
+
             questionLabel.text = "SUCCESS"
+
             leftBtn.hidden = true
             rightBtn.hidden = true
         } else {
