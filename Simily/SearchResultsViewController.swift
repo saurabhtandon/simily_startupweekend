@@ -64,6 +64,12 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         return productDisplay.count
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let product = productDisplay[indexPath.row]
+
+        self.performSegueWithIdentifier("Modal", sender: self)
+    }
+
     // MARK: Collection View
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.questionStack.count;

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		83072DEE1AAC28A70025111F /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 83072DED1AAC28A70025111F /* Node.m */; };
+		83072DF11AACBA910025111F /* UIView+UIView_Border.m in Sources */ = {isa = PBXBuildFile; fileRef = 83072DF01AACBA910025111F /* UIView+UIView_Border.m */; };
+		83072DF31AACBE370025111F /* NoPushSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83072DF21AACBE370025111F /* NoPushSegue.swift */; };
+		83072DF51AACC1320025111F /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83072DF41AACC1320025111F /* ProductViewController.swift */; };
 		8370D96B1AABD331005455D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8370D96A1AABD331005455D0 /* AppDelegate.swift */; };
 		8370D96E1AABD331005455D0 /* Simily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8370D96C1AABD331005455D0 /* Simily.xcdatamodeld */; };
 		8370D9701AABD331005455D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8370D96F1AABD331005455D0 /* ViewController.swift */; };
@@ -32,6 +35,10 @@
 /* Begin PBXFileReference section */
 		83072DEC1AAC28A70025111F /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		83072DED1AAC28A70025111F /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		83072DEF1AACBA910025111F /* UIView+UIView_Border.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIView_Border.h"; sourceTree = "<group>"; };
+		83072DF01AACBA910025111F /* UIView+UIView_Border.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIView_Border.m"; sourceTree = "<group>"; };
+		83072DF21AACBE370025111F /* NoPushSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPushSegue.swift; sourceTree = "<group>"; };
+		83072DF41AACC1320025111F /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		8370D9651AABD331005455D0 /* Simily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8370D9691AABD331005455D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8370D96A1AABD331005455D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +97,7 @@
 			children = (
 				8370D96A1AABD331005455D0 /* AppDelegate.swift */,
 				8370D96F1AABD331005455D0 /* ViewController.swift */,
+				83072DF41AACC1320025111F /* ProductViewController.swift */,
 				8370D98D1AABE853005455D0 /* SearchResultsViewController.swift */,
 				83072DEC1AAC28A70025111F /* Node.h */,
 				83072DED1AAC28A70025111F /* Node.m */,
@@ -101,6 +109,9 @@
 				8370D9901AAC16FD005455D0 /* Lol.h */,
 				8370D9911AAC16FD005455D0 /* Lol.m */,
 				8370D98F1AAC16FC005455D0 /* Simily-Bridging-Header.h */,
+				83072DEF1AACBA910025111F /* UIView+UIView_Border.h */,
+				83072DF01AACBA910025111F /* UIView+UIView_Border.m */,
+				83072DF21AACBE370025111F /* NoPushSegue.swift */,
 			);
 			path = Simily;
 			sourceTree = "<group>";
@@ -232,8 +243,11 @@
 			files = (
 				8370D9701AABD331005455D0 /* ViewController.swift in Sources */,
 				8370D9921AAC16FD005455D0 /* Lol.m in Sources */,
+				83072DF31AACBE370025111F /* NoPushSegue.swift in Sources */,
 				8370D98E1AABE853005455D0 /* SearchResultsViewController.swift in Sources */,
 				8370D96E1AABD331005455D0 /* Simily.xcdatamodeld in Sources */,
+				83072DF11AACBA910025111F /* UIView+UIView_Border.m in Sources */,
+				83072DF51AACC1320025111F /* ProductViewController.swift in Sources */,
 				8370D96B1AABD331005455D0 /* AppDelegate.swift in Sources */,
 				83072DEE1AAC28A70025111F /* Node.m in Sources */,
 			);

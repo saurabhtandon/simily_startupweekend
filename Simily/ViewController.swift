@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var img: UIImageView?
+    @IBOutlet var searchField: UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //img?.contentMode = UIViewContentMode.ScaleAspectFill
+        searchField?.addBottomBorderWithColor(UIColor.blackColor(), andWidth: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,5 +24,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.performSegueWithIdentifier("Search", sender: self)
+        return true
+    }
 }
 
