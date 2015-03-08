@@ -17,6 +17,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         //img?.contentMode = UIViewContentMode.ScaleAspectFill
         searchField?.addBottomBorderWithColor(UIColor.blackColor(), andWidth: 2.0)
+
+        for prod in nodeTemplate.products {
+            println("Fetching image for \(prod.title)")
+            let data = prod.imageData
+        }
     }
 
     override func didReceiveMemoryWarning() {

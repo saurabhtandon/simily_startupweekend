@@ -18,6 +18,7 @@
 @property (nonatomic) NSString *image;
 
 @property (readonly) NSString *displayPrice;
+@property (nonatomic) NSData *imageData;
 
 @end
 

@@ -16,6 +16,13 @@
 
     return [NSString stringWithFormat:@"$%d.%d", dollars, cents];
 }
+- (NSData*) imageData {
+    if (_imageData == nil) {
+        _imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: self.image]];
+    }
+
+    return _imageData;
+}
 @end
 
 @implementation Node

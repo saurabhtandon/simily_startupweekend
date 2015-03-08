@@ -8,6 +8,8 @@
 
 import UIKit
 
+let nodeTemplate = Node.createDefaultNodes()
+
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet var showingLabel: UILabel?
     @IBOutlet var tableView: UITableView?
@@ -15,8 +17,6 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet var searchField: UITextField?
     @IBOutlet var collectionViewHeightConstraint: NSLayoutConstraint?
     @IBOutlet var topSpaceConstraint: NSLayoutConstraint?
-
-    let nodeTemplate = Node.createDefaultNodes()
 
     var productDisplay: Array<Product> = []
     var questionStack: Array<Node> = []
@@ -102,6 +102,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         titleLabel.text = product.title
         brandLabel.text = product.brand
         likesLabel.text = "\(product.endorsements)"
+        imgView.image = UIImage(data: product.imageData)
+        
         let price = product.price.integerValue
         let dollars = price / 100
         let cents = price % 100
