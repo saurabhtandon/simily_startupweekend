@@ -110,7 +110,7 @@
     [work.childNodes addObject: adminUser];
 
     Node *personal = [[Node alloc] init];
-    personal.question = @"Will you use it to play games?";
+    personal.question = @"Will you play PC games?";
     personal.selectedOption = @"Personal";
     [personal.childNodes addObject: noGamer];
     [personal.childNodes addObject: yesGamer];

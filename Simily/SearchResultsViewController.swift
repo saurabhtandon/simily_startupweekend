@@ -12,6 +12,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet var tableView: UITableView?
     @IBOutlet var collectionView: UICollectionView?
     @IBOutlet var searchField: UITextField?
+    @IBOutlet var collectionViewHeightConstraint: NSLayoutConstraint?
+    @IBOutlet var topSpaceConstraint: NSLayoutConstraint?
 
     let nodeTemplate = Node.createDefaultNodes()
 
@@ -27,6 +29,15 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
         searchField?.addBottomBorderWithColor(UIColor.blackColor(), andWidth: 2.0)
         searchField?.text = "Laptops"
+    }
+
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
 
     @IBAction func pickOption(sender: UIButton) {
@@ -46,6 +57,19 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         let newIp = NSIndexPath(forRow: questionStack.count - 1, inSection: 0)
         collectionView?.insertItemsAtIndexPaths([newIp])
         collectionView?.scrollToItemAtIndexPath(newIp, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
+
+        // If it's the last one
+        if (childNode.question == nil) {
+            delay(1.0, closure: { () -> () in
+                self.collectionViewHeightConstraint?.constant = 0
+                self.topSpaceConstraint?.constant = 100
+                self.view.setNeedsUpdateConstraints()
+
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    self.view.layoutIfNeeded()
+                })
+            })
+        }
     }
 
     // MARK: tableView
@@ -86,6 +110,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         let questionLabel = cell.viewWithTag(100) as UILabel
         let leftBtn = cell.viewWithTag(1) as UIButton
         let rightBtn = cell.viewWithTag(2) as UIButton
+        let skipBtn = cell.viewWithTag(300) as UIButton
 
         leftBtn.addBottomBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
         leftBtn.addTopBorderWithColor(UIColor.whiteColor(), andWidth: 1.0)
@@ -106,10 +131,11 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
             let view = cell as UIView
             view.backgroundColor = color
 
-            questionLabel.text = "SUCCESS"
+            questionLabel.text = "These Are Our Picks"
 
             leftBtn.hidden = true
             rightBtn.hidden = true
+            skipBtn.hidden = true
         } else {
             questionLabel.text = question.question
             leftBtn.setTitle(question.childNodes[0].selectedOption, forState: UIControlState.Normal)

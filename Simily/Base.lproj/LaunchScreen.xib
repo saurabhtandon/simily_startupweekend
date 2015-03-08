@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchImg" translatesAutoresizingMaskIntoConstraints="NO" id="fzJ-Tm-ssh">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <rect key="frame" x="-25" y="0.0" width="414" height="736"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.015155766989135597" green="0.78179578367420233" blue="0.60227139034700994" alpha="1" colorSpace="calibratedRGB"/>
