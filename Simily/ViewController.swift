@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //img?.contentMode = UIViewContentMode.ScaleAspectFill
-        searchField?.addBottomBorderWithColor(UIColor.blackColor(), andWidth: 1.0)
+        searchField?.addBottomBorderWithColor(UIColor.blackColor(), andWidth: 2.0)
     }
 
     override func didReceiveMemoryWarning() {

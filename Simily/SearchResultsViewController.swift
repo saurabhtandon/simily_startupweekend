@@ -17,8 +17,13 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
     let nodeTemplate = Node.createDefaultNodes()
 
-    let productDisplay = ["Product1", "Product2"]
+    var productDisplay = []
     var questionStack: Array<Node> = []
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +57,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         let childNode = questionStack.last?.childNodes[choice] as Node
 
         questionStack.append(childNode)
+        productDisplay = childNode.products
+        tableView?.reloadData()
 
         // Animate inserted element
         let newIp = NSIndexPath(forRow: questionStack.count - 1, inSection: 0)
@@ -75,11 +82,22 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: tableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:AnyObject = tableView.dequeueReusableCellWithIdentifier("ProductCell", forIndexPath: indexPath)
-        let product: AnyObject = productDisplay[indexPath.row]
+        let product: Product = productDisplay[indexPath.row] as Product
 
-        let nameLabel = cell.viewWithTag(100) as UILabel
+        let titleLabel = cell.viewWithTag(100) as UILabel
+        let brandLabel = cell.viewWithTag(200) as UILabel
+        let likesLabel = cell.viewWithTag(300) as UILabel
+        let priceLabel = cell.viewWithTag(400) as UILabel
+        let imgView = cell.viewWithTag(500) as UIImageView
 
-        nameLabel.text = product as? String
+
+        titleLabel.text = product.title
+        brandLabel.text = product.brand
+        likesLabel.text = "\(product.endorsements.value)"
+        let price = product.price.integerValue
+        let dollars = price / 100
+        let cents = price % 100
+        priceLabel.text = "$\(dollars).\(cents))"
 
         return cell as UITableViewCell
     }
@@ -93,7 +111,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let product = productDisplay[indexPath.row]
+        let product = productDisplay[indexPath.row] as Product
 
         self.performSegueWithIdentifier("Modal", sender: self)
     }
