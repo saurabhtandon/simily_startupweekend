@@ -33,9 +33,17 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         questionStack.append(nodeTemplate)
         collectionView?.reloadData()
 
-        productDisplay = nodeTemplate.products.copy() as [Product]
-        productDisplay.sort({$0.endorsements > $1.endorsements})
-        tableView?.reloadData()
+        delay(0.5, closure: { () -> () in
+            self.productDisplay = nodeTemplate.products.copy() as [Product]
+            self.productDisplay.sort({$0.endorsements > $1.endorsements})
+
+            var indexPathsToAdd = [NSIndexPath]()
+            for i in 0...self.productDisplay.count - 1 {
+                indexPathsToAdd.append(NSIndexPath(forRow: i, inSection: 0))
+            }
+
+            self.tableView?.insertRowsAtIndexPaths(indexPathsToAdd, withRowAnimation: UITableViewRowAnimation.Top)
+        })
 
         searchField?.addBottomBorderWithColor(UIColor.blackColor(), andWidth: 2.0)
         searchField?.text = "Laptops"
@@ -62,11 +70,30 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         let childNode = questionStack.last?.childNodes[choice] as Node
 
         questionStack.append(childNode)
-        productDisplay = childNode.products.copy() as [Product]
-        productDisplay.sort({$0.endorsements > $1.endorsements})
-        tableView?.reloadData()
 
-        showingLabel?.text = "Showing \(productDisplay.count) of 20,298"
+        var indexPathsToDelete = [NSIndexPath]()
+        for i in 0...productDisplay.count - 1 {
+            indexPathsToDelete.append(NSIndexPath(forRow: i, inSection: 0))
+        }
+
+        productDisplay = []
+        tableView?.deleteRowsAtIndexPaths(indexPathsToDelete, withRowAnimation: UITableViewRowAnimation.Left)
+
+        delay(0.5, closure: { () -> () in
+            self.productDisplay = childNode.products.copy() as [Product]
+            self.productDisplay.sort({$0.endorsements > $1.endorsements})
+
+            var indexPathsToAdd = [NSIndexPath]()
+            for i in 0...self.productDisplay.count - 1 {
+                indexPathsToAdd.append(NSIndexPath(forRow: i, inSection: 0))
+            }
+
+            self.tableView?.insertRowsAtIndexPaths(indexPathsToAdd, withRowAnimation: UITableViewRowAnimation.Right)
+
+            self.showingLabel?.text = "Showing \(self.productDisplay.count) of 20,298"
+        })
+
+        self.showingLabel?.text = "Loading..."
 
         // Animate inserted element
         let newIp = NSIndexPath(forRow: questionStack.count - 1, inSection: 0)
@@ -75,7 +102,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 
         // If it's the last one
         if (childNode.question == nil) {
-            delay(1.0, closure: { () -> () in
+            delay(1.5, closure: { () -> () in
                 self.collectionViewHeightConstraint?.constant = 0
                 self.topSpaceConstraint?.constant = 100
                 self.view.setNeedsUpdateConstraints()

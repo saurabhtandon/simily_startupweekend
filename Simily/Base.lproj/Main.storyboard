@@ -382,12 +382,6 @@
                                     <outlet property="delegate" destination="zrj-qZ-IEw" id="QzJ-wZ-IWI"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="b5H-pr-xew">
-                                <rect key="frame" x="0.0" y="20" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="b5H-pr-xew" secondAttribute="height" multiplier="199:24" id="xti-5m-ecP"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20,298 Results" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRB-OT-ox9">
                                 <rect key="frame" x="189" y="276" width="209" height="21"/>
                                 <constraints>
@@ -405,6 +399,15 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="O9w-Lk-kuJ">
+                                <rect key="frame" x="0.0" y="358" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="b5H-pr-xew">
+                                <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b5H-pr-xew" secondAttribute="height" multiplier="199:24" id="xti-5m-ecP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
