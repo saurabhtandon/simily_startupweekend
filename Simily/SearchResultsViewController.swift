@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet var showingLabel: UILabel?
     @IBOutlet var tableView: UITableView?
     @IBOutlet var collectionView: UICollectionView?
     @IBOutlet var searchField: UITextField?
@@ -64,6 +65,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         productDisplay = childNode.products.copy() as [Product]
         productDisplay.sort({$0.endorsements > $1.endorsements})
         tableView?.reloadData()
+
+        showingLabel?.text = "Showing \(productDisplay.count) of 20,298"
 
         // Animate inserted element
         let newIp = NSIndexPath(forRow: questionStack.count - 1, inSection: 0)

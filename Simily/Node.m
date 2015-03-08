@@ -56,11 +56,11 @@
     acerTouchUltrabook.image = @"http://ecx.images-amazon.com/images/I/31qXXEkzMnL.jpg";
 
     Product *asusTouchTransformer = [[Product alloc] init];
-    asusTouchTransformer.title = @"ASUS Transformer Book 10.1\" Detachable 2-in-1 Touchscreen Laptop";
+    asusTouchTransformer.title = @"ASUS Transformer Book 10.1 Detachable 2-in-1 Touchscreen Laptop";
     asusTouchTransformer.brand = @"ASUS";
     asusTouchTransformer.price = @25900;
     asusTouchTransformer.like = YES;
-    asusTouchTransformer.endorsements = 3;
+    asusTouchTransformer.endorsements = 14;
     asusTouchTransformer.image = @"http://ecx.images-amazon.com/images/I/91hr23mzCkL._SL1500_.jpg";
 
     /* traveler + no touch*/

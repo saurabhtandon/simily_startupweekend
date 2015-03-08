@@ -10,10 +10,10 @@ import UIKit
 
 class ProductViewController: UIViewController {
     override func viewDidLoad() {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+//        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }
